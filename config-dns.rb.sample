@@ -1,0 +1,23 @@
+$dnsa = [
+    {"address" => "https://172.17.10.6:7004",
+     "uname" => "dnsa1",
+     "user" => "admin",
+     "password" => "test",
+     "master_ip" => "172.17.10.6"}
+
+#    {"address" => "http://localhost:4567",
+#     "user" => "admin",
+#     "password" => "test",
+#     "master_ip" => "5.4.3.2"},    
+]
+
+$route = "get_masters"
+$slave_address = "172.17.10.7"
+$command = "curl -k -s -X GET --user %s:%s -d slave=%s %s/%s"; #[user, password, data, address, route]
+$r_command = "/sbin/service named reload"
+$z_pref = "dnsa.zone."
+$z_path = "/var/named"
+$tpl_path = "/opt/relbit/DNS_Slaved/templates"
+$n_path = "/etc/named"
+$n_pref = "named.dnsa.conf."
+$n_master = "named.dnsadmin.conf"

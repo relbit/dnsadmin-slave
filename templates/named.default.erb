@@ -1,0 +1,7 @@
+
+zone "<%= zone["zone"] %>" {
+    type slave;
+    file "<%= $z_pref %><%= adm["data"]["uname"] %>.<%= zone["zone"] %>";
+    masters { <%= zone["master_ip"] %>; };
+    allow-notify { <%= zone["master_ip"] %>; };
+};
